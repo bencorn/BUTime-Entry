@@ -1,0 +1,9 @@
+﻿body {
+    width: 800px;
+    height: 600px;
+    padding-top: 7px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    overflow-y: hidden;
+}
+
