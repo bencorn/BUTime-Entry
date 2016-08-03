@@ -20,7 +20,8 @@
                 Friday: vm.Friday
             }, function () {
                 // Update status to let user know options were saved.
-                alert("Options saved!")
+                alert(chrome.storage.get("Monday", function () {
+                }));
                 setTimeout(function () {
                     status.textContent = '';
                 }, 750);
