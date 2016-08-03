@@ -11,21 +11,20 @@
 
         var vm = this;
 
-        vm.newUser = {};
-
-        vm.Text = "ghjewkfh";
-
-        vm.addUser = function () {
-            $http.post("api/users", vm.newUser)
-                .then(function () {
-                    vm.newUser = {};
-                },
-                    function () {
-
-                    })
-                .finally(function () {
-
-                });
+        vm.save_options = function() {
+            chrome.storage.sync.set({
+                Monday: vm.Monday,
+                Tuesday: vm.Tuesday,
+                Wednesday: vm.Wednesday,
+                Thursday: vm.Thursday,
+                Friday: vm.Friday
+            }, function () {
+                // Update status to let user know options were saved.
+                alert("Options saved!")
+                setTimeout(function () {
+                    status.textContent = '';
+                }, 750);
+            });
         }
 
     }
