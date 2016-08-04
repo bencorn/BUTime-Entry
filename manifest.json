@@ -3,7 +3,7 @@
 
   "name": "Hourly",
   "description": "Quickly enter your hours into Boston University's Student Link.",
-  "version": "1.0",
+  "version": "1.1",
 
   "content_scripts": [
     {
