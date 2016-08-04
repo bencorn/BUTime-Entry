@@ -21,7 +21,7 @@
                 <div class="six fields">
                     <div class="field">
                         <label>Begin</label>
-                        <select class="ui fluid dropdown" name="StartTime1" ng-model="vm.Monday.Begin1">
+                        <select class="ui fluid dropdown" name="StartTime1" ng-model="vm.Monday.Begin1" data-value="{{vm.Monday.Begin1}}">
                             <option value=""></option>
                             <option value="8:00am">
                                 8:00am
@@ -8802,8 +8802,8 @@
                 </div>
             </div>
 
-            <button ng-click="vm.save_options()" type="button" class="ui button basic">Save</button>
-
+            <button ng-click="vm.save_options()" type="button" class="ui small button basic">Save</button>
+            <span class="ui float right">{{vm.Response}}</span>
         </form>
     </div>
 </body>
