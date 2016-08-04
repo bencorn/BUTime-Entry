@@ -127,7 +127,7 @@ chrome.storage.sync.get(null, function (obj) {
 
     dp = $("tr:contains('Friday')")[0].cells[4].children[0];
     select = $(dp).find("select");
-    $(select).val(response.Friday["Begin1"]);
+    $(select).val(response.Friday["Begin2"]);
 
     dp = $("tr:contains('Friday')")[0].cells[5].children[0];
     select = $(dp).find("select");

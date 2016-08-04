@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
 
-  "name": "Getting started example",
-  "description": "This extension shows a Google Image search result for the current page",
+  "name": "Hourly",
+  "description": "Quickly enter your hours into Boston University's Student Link.",
   "version": "1.0",
 
   "content_scripts": [
@@ -11,6 +11,8 @@
       "js": [ "jquery-min.js", "background.js" ]
     }
   ],
+
+  "icons": {"128": "terriericon.png"},
 
   "background": {"scripts":  ["jquery-min.js", "background.js"]},
 
