@@ -9,16 +9,22 @@
     // code for controller itself
     function timeEntryController($http) {
 
+        var vm = this;
+        vm.Monday = {};
+        vm.Tuesday = {};
+        vm.Wednesday = {};
+        vm.Thursday = {};
+        vm.Friday = {};
+
         chrome.storage.sync.get(null, function (obj) {
-            console.log(obj);
-            if (obj.Monday === 'undefined') {
+            if (!obj.hasOwnProperty('Monday')) {
+
                 vm.Monday.Begin1 = " ";
                 vm.Monday.Begin2 = " ";
                 vm.Monday.Begin3 = " ";
                 vm.Monday.End1 = " ";
                 vm.Monday.End2 = " ";
                 vm.Monday.End3 = " ";
-
                 vm.Tuesday.Begin1 = " ";
                 vm.Tuesday.Begin2 = " ";
                 vm.Tuesday.Begin3 = " ";
@@ -46,16 +52,21 @@
                 vm.Friday.End1 = " ";
                 vm.Friday.End2 = " ";
                 vm.Friday.End3 = " ";
+
+                chrome.storage.sync.set({
+                    "Monday": vm.Monday,
+                    "Tuesday": vm.Tuesday,
+                    "Wednesday": vm.Wednesday,
+                    "Thursday": vm.Thursday,
+                    "Friday": vm.Friday
+                }, function () {
+                });
+            }
+            else {
+                getOptions();
             }
 
-            chrome.storage.sync.set({
-                "Monday": vm.Monday,
-                "Tuesday": vm.Tuesday,
-                "Wednesday": vm.Wednesday,
-                "Thursday": vm.Thursday,
-                "Friday": vm.Friday
-            }, function () {
-            });
+            
 
         });
 
@@ -169,7 +180,6 @@
 
         }
 
-        var vm = this;
         vm.Response = "";
 
         vm.save_options = function () {
